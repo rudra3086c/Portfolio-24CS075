@@ -2,23 +2,13 @@
 
 ## 📌 Project Overview
 
-This project is a **Student Portfolio** web application developed using **React**, **Vite**, and **React Router**. It demonstrates reusable React components, client-side routing, and state management using the `useState` hook to create a modern Single Page Application (SPA).
+This project is a **Student Portfolio** web application built using **React**, **Vite**, **React Router**, and the **GitHub REST API**. The application demonstrates component-based development, client-side routing, state management using React Hooks, and asynchronous data fetching from an external API.
 
-This project was developed as part of the **Advanced Web Development Frameworks (AWDF)** laboratory.
-
----
-
-## 🎯 Objectives
-
-* Set up a React development environment using Vite.
-* Create reusable functional components.
-* Implement client-side routing using React Router.
-* Manage dynamic UI using the `useState` hook.
-* Build a responsive single-page portfolio application.
+The project was developed as part of the **Advanced Web Development Frameworks (AWDF)** laboratory.
 
 ---
 
-## 🛠️ Technologies Used
+## 🚀 Technologies Used
 
 * React 18+
 * Vite
@@ -27,8 +17,44 @@ This project was developed as part of the **Advanced Web Development Frameworks 
 * JSX
 * HTML5
 * CSS3
+* Fetch API
+* GitHub REST API
 * Node.js
 * npm
+
+---
+
+## ✨ Features
+
+### Practical 1
+
+* Reusable React components
+* Component-based UI
+* Props for data passing
+* Dynamic Skills component
+* Single-page portfolio layout
+
+### Practical 2
+
+* React Router navigation
+* Home, Projects, and Contact routes
+* Controlled form using `useState`
+* Dark/Light mode toggle
+* Live character count
+* Show/Hide Help toggle
+* Custom 404 Not Found page
+
+### Practical 3
+
+* GitHub REST API integration
+* Repository list fetched dynamically
+* Loading spinner while fetching data
+* Error handling with retry functionality
+* Repository search/filter
+* Displays repository name
+* Displays repository URL
+* Displays GitHub star count
+* Conditional rendering using loading, success, and error states
 
 ---
 
@@ -46,6 +72,8 @@ src/
 │   ├── Home.jsx
 │   ├── Projects.jsx
 │   ├── Contact.jsx
+│   ├── Spinner.jsx
+│   ├── ErrorMessage.jsx
 │   └── NotFound.jsx
 │
 ├── App.jsx
@@ -56,85 +84,56 @@ src/
 
 ---
 
-## ✨ Features
+## 🌐 API Used
 
-### Practical 1
+**GitHub REST API**
 
-* Reusable React components
-* Component-based architecture
-* Dynamic rendering using props
-* Skills rendered from an array using `map()`
-* Clean single-page portfolio layout
+Endpoint:
 
-### Practical 2
+```text
+https://api.github.com/users/rudra3086c/repos
+```
 
-* Client-side routing using React Router
-* Navigation without full page reload
-* Home, Projects, and Contact pages
-* Controlled form input using `useState`
-* Live message preview
-* Live character count
-* Show/Hide Help toggle
-* Dark/Light mode toggle
-* Custom 404 Not Found page
-* Active navigation highlighting
+The Projects page fetches repositories dynamically and displays:
+
+* Repository Name
+* Repository URL
+* GitHub Star Count
 
 ---
 
 ## 📄 Application Routes
 
-| Route       | Description                                             |
-| ----------- | ------------------------------------------------------- |
-| `/`         | Home page containing the portfolio                      |
-| `/projects` | Displays the list of projects                           |
-| `/contact`  | Contact page with controlled input and state management |
-| `*`         | Custom 404 page for invalid routes                      |
+| Route       | Description                              |
+| ----------- | ---------------------------------------- |
+| `/`         | Home page                                |
+| `/projects` | Fetches and displays GitHub repositories |
+| `/contact`  | Contact form with state management       |
+| `*`         | Custom 404 page                          |
 
 ---
 
-## 📚 Components
+## 📚 React Concepts Demonstrated
 
-* **Header** – Displays portfolio title and student name.
-* **NavBar** – Navigation using React Router `Link`.
-* **About** – Student introduction.
-* **Skills** – Dynamically renders skills using props.
-* **Projects** – Displays a list of projects.
-* **Contact** – Demonstrates controlled inputs and `useState`.
-* **Footer** – Contact details and copyright.
-* **NotFound** – Custom 404 error page.
+* Functional Components
+* Props
+* React Router
+* useState
+* useEffect
+* Conditional Rendering
+* Fetch API
+* REST API Integration
+* Controlled Components
 
 ---
 
 ## 🚀 Installation
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/rudra3086c/Portfolio-24CS075.git
-```
-
-Move into the project directory:
-
-```bash
 cd Portfolio-24CS075
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
-```
-
-Open your browser and visit:
-
-```
-http://localhost:5173
 ```
 
 ---
@@ -143,12 +142,13 @@ http://localhost:5173
 
 After completing this project, students will be able to:
 
-* Create reusable React components.
-* Pass data using props.
-* Manage application state using `useState`.
-* Implement client-side routing with React Router.
-* Build Single Page Applications (SPA).
-* Organize React projects using component-based architecture.
+* Build reusable React components.
+* Implement client-side routing.
+* Manage application state using React Hooks.
+* Fetch data from a REST API.
+* Handle loading and error states.
+* Render asynchronous data dynamically.
+* Build a complete Single Page Application (SPA).
 
 ---
 
