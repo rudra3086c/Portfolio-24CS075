@@ -10,6 +10,7 @@ function Footer({ email }) {
       }}
     >
       <p>Contact: {email}</p>
+      {console.log("Footer loaded")}
       <p>© 2026 Student Portfolio. All Rights Reserved.</p>
     </footer>
   );

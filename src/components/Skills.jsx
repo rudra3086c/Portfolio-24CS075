@@ -8,6 +8,7 @@ function Skills({ skillList }) {
           <li key={skill}>{skill}</li>
         ))}
       </ul>
+      {console.log("Skills loaded")}
     </section>
   );
 }

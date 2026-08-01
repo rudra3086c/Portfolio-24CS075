@@ -23,6 +23,7 @@ function NavBar({ activeSection }) {
           {item}
         </span>
       ))}
+      {console.log("NavBar loaded")}
     </nav>
   );
 }

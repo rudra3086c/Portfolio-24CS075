@@ -2,6 +2,7 @@ function Header({ name, themeColor }) {
   return (
     <header style={{ backgroundColor: themeColor, padding: "20px", color: "white", textAlign: "center" }}>
       <h1>Student Portfolio</h1>
+      {console.log("Header loaded")}
       <h2>{name}</h2>
     </header>
   );
