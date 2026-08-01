@@ -1,29 +1,35 @@
-function NavBar({ activeSection }) {
-  const navItems = ["Home", "About", "Skills", "Contact"];
+import { Link, useLocation } from "react-router-dom";
+
+function NavBar() {
+  const location = useLocation();
+
+  const navStyle = {
+    backgroundColor: "#f4f4f4",
+    padding: "10px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+  };
+
+  const getLinkStyle = (path) => ({
+    textDecoration: "none",
+    fontWeight: location.pathname === path ? "bold" : "normal",
+    color: location.pathname === path ? "blue" : "black",
+  });
 
   return (
-    <nav
-      style={{
-        backgroundColor: "#f4f4f4",
-        padding: "10px",
-        display: "flex",
-        justifyContent: "center",
-        gap: "20px",
-      }}
-    >
-      {navItems.map((item) => (
-        <span
-          key={item}
-          style={{
-            fontWeight: activeSection === item ? "bold" : "normal",
-            color: activeSection === item ? "blue" : "black",
-            cursor: "pointer",
-          }}
-        >
-          {item}
-        </span>
-      ))}
-      {console.log("NavBar loaded")}
+    <nav style={navStyle}>
+      <Link to="/" style={getLinkStyle("/")}>
+        Home
+      </Link>
+
+      <Link to="/projects" style={getLinkStyle("/projects")}>
+        Projects
+      </Link>
+
+      <Link to="/contact" style={getLinkStyle("/contact")}>
+        Contact
+      </Link>
     </nav>
   );
 }

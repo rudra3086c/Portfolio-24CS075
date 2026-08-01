@@ -1,35 +1,43 @@
-import "./App.css";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
 
 function App() {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Vite"
-  ];
-
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div>
-      <Header
-        name="Rudra Patel"
-        themeColor="#2563eb"
-      />
+    <div style={{
+    backgroundColor: darkMode ? "#222" : "#ffffff",
+    color: darkMode ? "#ffffff" : "#000000",
+    minHeight: "100vh",
+  }}>
+      <NavBar />
+        <div style={{ textAlign: "center", margin: "20px" }}>
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      style={{
+        padding: "10px 20px",
+        cursor: "pointer",
+      }}
+    >
+      {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+    </button>
+  </div>
 
-      <NavBar activeSection="Home" />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
 
-      <About bio="I am a Computer Science student passionate about Web Development, AI, and Machine Learning." />
-
-      <Skills skillList={skills} />
-
-      <Footer email="24cs075@charusat.edu.in" />
+        {/* 404 Page */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
+    
   );
 }
 
